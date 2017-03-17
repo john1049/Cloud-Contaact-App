@@ -41,7 +41,11 @@
         </div>
 
         <div class="contactList">
-
+          <div ng-repeat="contact in ctrl.contacts | orderBy: ['firstName', 'lastName'] track by contact.$id">
+            <ul>
+              <li>{{contact.firstName}} {{contact.lastName}} {{contact.phone}} {{contact.email}} {{contact.bday}} <button class="btn btn-primary">Edit</button> <button class="btn btn-danger" ng-click="ctrl.remove(contact)">Delete</button></li>
+            </ul>
+          </div>
         </div>
     </div>
 

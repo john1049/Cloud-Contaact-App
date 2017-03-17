@@ -49,6 +49,16 @@ function ContactCtrl(contacts){
     .then(newRef => {
       this.newContact = this.clearForm()
     })
+
+    this.remove = function remove(contact){
+      if(confirm("Do you want to delete this contact?")){
+        this.contacts.$remove(contact)
+      }
+    }
+
+    this.edit = function edit(contact){
+      this.contact.$save(contact)
+    }
   }
 
 
