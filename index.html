@@ -16,7 +16,7 @@
         <div class="container">
             <h4>Add new contact</h4>
             <div class="addContactForm col-xs-8 col-xs-offset-2">
-                <form class="form-group" ng-submit="ctrl.add(ctrl.newContact)">
+                <form class="form-group" ng-submit="ctrl.addContact(ctrl.newContact)">
                     <label for="first-name">First Name</label>
                     <input type="text" id="first-name" class="form-control" ng-model="ctrl.newContact.firstName">
 
@@ -55,9 +55,15 @@
         </div>
     </div>
 
+
+
+    <!-- Load Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
+    <!-- Load Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
+    <!-- Load AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
+    <!-- Load our app -->
     <script src="app.js"></script>
 </body>
 
