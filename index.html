@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/5.0.0/normalize.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Condensed:300,400">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
     <title>Document</title>
@@ -43,21 +41,24 @@
         <div class="contactList">
           <div ng-repeat="contact in ctrl.contacts | orderBy: ['firstName', 'lastName'] track by contact.$id">
             <ul>
-              <li>{{contact.firstName}} {{contact.lastName}} {{contact.phone}} {{contact.email}} {{contact.bday}} <button class="btn btn-primary">Edit</button> <button class="btn btn-danger" ng-click="ctrl.remove(contact)">Delete</button></li>
+              <li>
+                <div class="form-inline">
+                <input type="text" class="form-control" ng-model="contact.firstName">
+                <input type="text" class="form-control" ng-model="contact.lastName">
+                <input type="text" class="form-control" ng-model="contact.phone">
+                <input type="text" class="form-control" ng-model="contact.email">
+                <input type="text" class="form-control" ng-model="contact.bday">
+                <button class="btn btn-primary" ng-click="ctrl.save(contact)">Save</button></li>
+                <button class="btn btn-danger" ng-click="ctrl.remove(contact)">Delete</button>
+              </div>
             </ul>
           </div>
         </div>
     </div>
 
-
-
-    <!-- Load Angular -->
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.min.js"></script>
-    <!-- Load Firebase -->
     <script src="https://www.gstatic.com/firebasejs/3.6.6/firebase.js"></script>
-    <!-- Load AngularFire -->
     <script src="https://cdn.firebase.com/libs/angularfire/2.3.0/angularfire.min.js"></script>
-    <!-- Load our app -->
     <script src="app.js"></script>
 </body>
 
